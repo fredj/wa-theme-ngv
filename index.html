@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="stylesheet" href="https://early.webawesome.com/webawesome@3.0.0-alpha.10/dist/styles/webawesome.css" />
+  <script type="module" src="https://early.webawesome.com/webawesome@3.0.0-alpha.10/dist/webawesome.loader.js"></script>
+
+  <link rel="stylesheet" href="ngv.css">
+
+  <style>
+    body {
+        margin: 20px;
+    }
+    .background {
+        background-image: url('https://wmts.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/2056/19/26/38.jpeg');
+        padding: 50px;
+    }
+
+    .hes-view {
+        box-shadow: none;
+        background-color: rgba(249, 243, 236, 1);
+        border: none;
+    }
+    .hes-view::part(body) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 12px;
+        --spacing: 12px;
+        box-shadow: none;
+    }
+    .hes-view-n {
+        grid-area: 1 / 2 / 2 / 3;
+    }
+    .hes-view-w {
+        grid-area: 2 / 1 / 3 / 2;
+    }
+    .hes-view-t {
+        grid-area: 2 / 2 / 3 / 3;
+    }
+    .hes-view-e {
+        grid-area: 2 / 3 / 3 / 4;
+    }
+    .hes-view-s {
+        grid-area: 3 / 2 / 4 / 3;
+    }
+
+  </style>
+
+</head>
+
+<body>
+    <p>Hello world</p>
+
+    <p>
+        <wa-button appearance="filled">
+            <wa-icon slot="prefix" name="arrow-right-to-bracket" variant="solid"></wa-icon>
+            Login
+        </wa-button>
+    </p>
+    <p>
+        <wa-button pill appearance="filled"><wa-icon src="icons/top.svg"></wa-icon></wa-button>
+        <wa-button appearance="filled"><wa-icon src="icons/layers.svg"></wa-icon></wa-button>
+        <wa-button appearance="filled"><wa-icon name="minus"></wa-icon></wa-button>
+        <wa-button appearance="filled"><wa-icon name="plus"></wa-icon></wa-button>
+    </p>
+    <p>
+        <wa-button appearance="outlined" variant="neutral">Outlined</wa-button>
+        <wa-button appearance="filled outlined" variant="neutral">F + O</wa-button>
+        <wa-button appearance="filled" variant="neutral">Filled</wa-button>
+        <wa-button appearance="plain" variant="neutral">Plain</wa-button>
+        <wa-button appearance="filled" variant="neutral" disabled>Disabled</wa-button>
+    </p>
+
+    <p>
+        <wa-button-group>
+            <wa-button appearance="filled">Left</wa-button>
+            <wa-button appearance="filled">Center</wa-button>
+            <wa-button appearance="filled">Right</wa-button>
+        </wa-button-group>
+    </p>
+
+    <p>
+        <div class="background">
+            <!-- FIXME: maybe wa-card is overkill -->
+            <wa-card class="ngv-toolbar">
+                <wa-button appearance="filled"><wa-icon src="icons/top.svg"></wa-icon></wa-button>
+                <wa-button appearance="filled"><wa-icon src="icons/layers.svg"></wa-icon></wa-button>
+                <wa-button appearance="filled"><wa-icon name="minus"></wa-icon></wa-button>
+                <wa-button appearance="filled"><wa-icon name="plus"></wa-icon></wa-button>
+            </wa-card>
+        </div>
+    </p>
+
+    <p>
+        <div>
+            <wa-card with-header class="ngv-vertical-menu">
+                <div slot="header">
+                    <!-- FIXME: collapse button -->
+                    <wa-icon-button name="chevron-left"></wa-icon-button>
+                </div>
+                <wa-card with-header>
+                    <div slot="header">
+                        <wa-icon src="icons/camera.svg"></wa-icon>
+                        Intéragir avec les objets de la scene
+                    </div>
+                    <wa-card class="hes-view">
+                        <wa-button class="hes-view-n" size="medium" appearance="filled"><wa-icon slot="prefix" src="icons/north.svg"></wa-icon>North</wa-button>
+                        <wa-button class="hes-view-w" size="medium" appearance="filled"><wa-icon slot="prefix" src="icons/west.svg"></wa-icon>West</wa-button>
+                        <wa-button class="hes-view-t" size="medium" appearance="filled"><wa-icon slot="prefix" src="icons/top.svg"></wa-icon>Top</wa-button>
+                        <wa-button class="hes-view-e" size="medium" appearance="filled"><wa-icon slot="prefix" src="icons/east.svg"></wa-icon>East</wa-button>
+                        <wa-button class="hes-view-s" size="medium" appearance="filled"><wa-icon slot="prefix" src="icons/south.svg"></wa-icon>South</wa-button>
+                    </wa-card>
+                </wa-card>
+                <wa-card with-header>
+                    <div slot="header">
+                        <wa-icon src="icons/layers.svg"></wa-icon>
+                        Catalogue
+                    </div>
+                    inside the card
+                </wa-card>
+            </wa-card>
+        </div>
+    </p>
+
+    <p>
+        <wa-button-group>
+            <wa-button pill appearance="filled"><wa-icon name="minus"></wa-icon></wa-button>
+            <wa-button pill appearance="filled"><wa-icon name="home"></wa-icon></wa-button>
+            <wa-button pill appearance="filled"><wa-icon name="plus"></wa-icon></wa-button>
+        </wa-button-group>
+    </p>
+    <p>
+        <wa-button-group orientation="vertical">
+            <wa-button pill appearance="filled"><wa-icon name="minus"></wa-icon></wa-button>
+            <wa-button pill appearance="filled"><wa-icon name="plus"></wa-icon></wa-button>
+        </wa-button-group>
+    </p>
+
+    <p>
+        <wa-button pill appearance="filled"><wa-icon name="minus"></wa-icon></wa-button>
+        <wa-button pill appearance="filled"><wa-icon name="plus"></wa-icon></wa-button>
+    </p>
+
+    <p>
+        <wa-input type="search" placeholder="search" clearable>
+            <wa-icon name="search" variant="solid" slot="prefix"></wa-icon>
+        </wa-input>
+    </p>
+
+    <p>
+        <form class="input-validation-required">
+            <wa-input></wa-input>
+            <br />
+            <wa-select clearable>
+              <wa-option value="birds">Birds</wa-option>
+              <wa-option value="cats">Cats</wa-option>
+              <wa-option value="dogs">Dogs</wa-option>
+              <wa-option value="other">Other</wa-option>
+            </wa-select>
+            <br />
+            <wa-textarea value="This is a text"></wa-textarea>
+            <br />
+            <wa-checkbox>Checkbox</wa-checkbox>
+            <br />
+            <wa-radio-group value="1">
+                <wa-radio value="1">Option 1</wa-radio>
+                <wa-radio value="2">Option 2</wa-radio>
+            </wa-radio-group>
+            <br />
+            <wa-switch>Switch</wa-switch>
+          </form>
+    </p>
+
+</body>
+
+</html>
